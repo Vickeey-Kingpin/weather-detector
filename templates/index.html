@@ -1,0 +1,47 @@
+{% load static %}
+<style>
+    body{
+        background: url("{% static 'img/cloud.jpg' %}") no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>weatherdetector</title>
+    <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+    <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="menubar">
+            <h1 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; text-align: center; -webkit-text-stroke: 1px red; color: transparent;">Weather Detector</h1>
+        </div>
+        <div class="inputgroup">
+            <form method="POST">
+                {% csrf_token %}
+                <h3 style="margin-bottom: 5px;">Enter a City Name:</h3>
+                <input class="srch" type=" button" placeholder="e.g. Lagos,Nairobi,New York,London" name="city"><br>
+                <a href=""><button class="btn">Search</button></a>
+            </form>
+        </div>
+        <div class="results">
+            <div class="text" style="color: orangered;">
+                <h3>{{city}}</h3>
+                <h4>Country Code <i class="fa-solid fa-code"></i>: {{data.country_code}}</h4>
+                <h5>Coordinate <i class="fa-solid fa-location-dot"></i>: {{data.coordinate}}</h5>
+                <h5>Temperature <i class="fa-solid fa-temperature-half"></i>: {{data.temp}}</h5>
+                <h5>Pressure <i class="fa-solid fa-gem"></i>:{{data.pressure}}</h5>
+                <h5>Humidity <i class="fa-solid fa-cloud-bolt"></i>: {{data.humidity}}</h5>
+            </div>
+            <div class="weather" style="color: white;"><i class="fa-solid fa-cloud"></i><br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

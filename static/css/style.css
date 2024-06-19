@@ -1,0 +1,54 @@
+.inputgroup .srch{
+    width: 500px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    background: transparent;
+}
+.inputgroup .btn{
+    width: 500px;
+    height: 40px;
+    margin: 10px;
+    border-radius: 5px;
+    background: orangered;
+}
+.inputgroup .btn:hover{
+    background-color: rgb(6, 187, 6);
+    transition: 2s ease; 
+}
+.wrapper{
+    border: 2px solid;
+    overflow: auto;
+    width: 70%;
+    padding: 10px;
+    margin: auto;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.inputgroup{
+    float: left;
+    width: 45%;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 10px;
+}
+.results{
+    float: right;
+    width: 50%;
+    display: flex;
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+}
+.results .weather{
+    position: absolute;
+    right: 15px;
+    text-align: center;
+}
+.results .weather .fa-cloud{
+    width: 200px;
+    height: 100px;
+}
